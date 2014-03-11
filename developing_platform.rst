@@ -2,8 +2,8 @@ Developing Platform
 ===================
 
 | Since any payment platform is implemented on the existing Payment
-Suite for Symfony2 is something like a plugin, must be implemented
-simply those specific features of the platform itself.
+Suite for Symfony2 is something like a plugin, must be implemented simply those
+specific features of the platform itself.
 | The core provides a number of tools, both definition and execution, so
 it is not too complex to implement each of the platforms, and providing
 homogeneity in the set of all events regarding concerns.
@@ -126,7 +126,7 @@ data is used for completely static definition.
 This configuration must be properly defined and validated, as defined
 `here`_. Let’s see a configuration sample
 
-.. code:: yml
+.. code:: yaml
 
     services:
 
@@ -415,14 +415,13 @@ Order load
 ~~~~~~~~~~
 
 | This event recieves as paramater an instance of
-``Mmoreram\PaymentCoreBundle\Event\PaymentOrderLoadEvent`` with thow
-methods.
+``Mmoreram\PaymentCoreBundle\Event\PaymentOrderLoadEvent`` with these methods.
 | ``$event->getPaymentBridge`` returns the implementation of
 ``PaymentBridgeInterface`` needed by PaymentCore.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yml
+.. code:: yaml
 
     services:
         my_event_listener:
@@ -441,7 +440,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yml
+.. code:: yaml
 
     services:
         my_event_listener:
@@ -459,7 +458,7 @@ Order done
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yml
+.. code:: yaml
 
     services:
         my_event_listener:
@@ -478,7 +477,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yml
+.. code:: yaml
 
     services:
         my_event_listener:
@@ -497,7 +496,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yml
+.. code:: yaml
 
     services:
         my_event_listener:

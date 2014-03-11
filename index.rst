@@ -27,6 +27,6 @@ Developer Documentation
 .. toctree::
     :maxdepth: 2
 
-    create_platform
+    developing_platform
     contribute
     todo

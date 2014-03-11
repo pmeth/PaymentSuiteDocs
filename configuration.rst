@@ -124,7 +124,7 @@ This service **must** implement
 This service **must** be named ``payment.bridge`` and configured in the
 ``Resources\config\services.yml`` file:
 
-.. code:: yml
+.. code:: yaml
 
     services:
         # ...
@@ -225,7 +225,7 @@ every payment stage.
 Register these event listeners in your ``Resources\config\services.yml``
 file:
 
-.. code:: yml
+.. code:: yaml
 
     services:
         # ...

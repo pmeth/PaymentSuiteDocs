@@ -9,7 +9,7 @@ You have to add require line into you composer.json file
     you need to replace ``platform`` with bundle name you want to
     install
 
-.. code:: yml
+.. code:: yaml
 
     "require": {
        // ...
