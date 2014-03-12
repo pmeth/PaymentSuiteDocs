@@ -414,7 +414,7 @@ Kernel Events
 Order load
 ~~~~~~~~~~
 
-| This event recieves as paramater an instance of
+| This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderLoadEvent`` with these methods.
 | ``$event->getPaymentBridge`` returns the implementation of
 ``PaymentBridgeInterface`` needed by PaymentCore.
@@ -432,7 +432,7 @@ Order load
 Order created
 ~~~~~~~~~~~~~
 
-| This event recieves as paramater an instance of
+| This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderCreatedEvent`` with thow
 methods.
 | ``$event->getPaymentBridge`` returns the implementation of
@@ -451,7 +451,7 @@ methods.
 Order done
 ~~~~~~~~~~
 
-| This event recieves as paramater an instance of
+| This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderDone`` with thow methods.
 | ``$event->getPaymentBridge`` returns the implementation of
 ``PaymentBridgeInterface`` needed by PaymentCore.
@@ -469,7 +469,7 @@ Order done
 Order success
 ~~~~~~~~~~~~~
 
-| This event recieves as paramater an instance of
+| This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderSuccessEvent`` with thow
 methods.
 | ``$event->getPaymentBridge`` returns the implementation of
@@ -488,7 +488,7 @@ methods.
 Order fail
 ~~~~~~~~~~
 
-| This event recieves as paramater an instance of
+| This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderFailEvent`` with thow
 methods.
 | ``$event->getPaymentBridge`` returns the implementation of
