@@ -25,7 +25,7 @@ This service **must** implement
 
     <?php
 
-    namespace YourProjectName\PaymentCoreBundle\Services\interfaces;
+    namespace YourProjectName\PaymentCoreBundle\Services;
 
     use Mmoreram\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface;
 
