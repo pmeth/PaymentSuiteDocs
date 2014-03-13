@@ -23,7 +23,7 @@ Then you have to use composer to update your project dependencies
     $ curl -sS https://getcomposer.org/installer | php
     $ php composer.phar update
 
-And register the bundle in your ``appkernel.php`` file
+And register the bundle in your ``AppKernel.php`` file
 
 .. code-block:: php
 
