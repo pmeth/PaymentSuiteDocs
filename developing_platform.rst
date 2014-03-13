@@ -436,8 +436,8 @@ Order created
 ~~~~~~~~~~~~~
 
 | This event recieves as parameter an instance of
-``Mmoreram\PaymentCoreBundle\Event\PaymentOrderCreatedEvent`` with thow
-methods.
+``Mmoreram\PaymentCoreBundle\Event\PaymentOrderCreatedEvent`` with thow methods.
+
 * ``$event->getPaymentBridge`` returns the implementation of ``PaymentBridgeInterface`` needed by PaymentCore.
 * ``$event->getPaymentMethod`` returns the implementation of ``PaymentMethodInterface`` implemented by Method Platform.
 
@@ -454,6 +454,7 @@ Order done
 
 | This event recieves as parameter an instance of
 ``Mmoreram\PaymentCoreBundle\Event\PaymentOrderDone`` with thow methods.
+
 * ``$event->getPaymentBridge`` returns the implementation of ``PaymentBridgeInterface`` needed by PaymentCore.
 * ``$event->getPaymentMethod`` returns the implementation of ``PaymentMethodInterface`` implemented by Method Platform.
 
@@ -469,8 +470,8 @@ Order success
 ~~~~~~~~~~~~~
 
 | This event recieves as parameter an instance of
-``Mmoreram\PaymentCoreBundle\Event\PaymentOrderSuccessEvent`` with thow
-methods.
+``Mmoreram\PaymentCoreBundle\Event\PaymentOrderSuccessEvent`` with thow methods.
+
 * ``$event->getPaymentBridge`` returns the implementation of ``PaymentBridgeInterface`` needed by PaymentCore.
 * ``$event->getPaymentMethod`` returns the implementation of ``PaymentMethodInterface`` implemented by Method Platform.
 
@@ -486,8 +487,8 @@ Order fail
 ~~~~~~~~~~
 
 | This event recieves as parameter an instance of
-``Mmoreram\PaymentCoreBundle\Event\PaymentOrderFailEvent`` with thow
-methods.
+``Mmoreram\PaymentCoreBundle\Event\PaymentOrderFailEvent`` with thow methods.
+
 * ``$event->getPaymentBridge`` returns the implementation of ``PaymentBridgeInterface`` needed by PaymentCore.
 * ``$event->getPaymentMethod`` returns the implementation of ``PaymentMethodInterface`` implemented by Method Platform.
 
