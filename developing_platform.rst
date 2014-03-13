@@ -141,7 +141,7 @@ This configuration must be properly defined and validated, as defined
                 route: payment_failed
                 order_append: false
 
-..note:: It is important to understand the motivation of configuration items.
+.. note:: It is important to understand the motivation of configuration items.
          You only have to define elements unchanged at project level and
          environment-level writable. Pay dependent elements are placed along
          PaymentBridge as we will see later.
