@@ -366,6 +366,8 @@ events. All methods require paymentBridge and paymentmethod.
 
 .. code-block:: php
 
+    <?php
+
     /**
      * At this point, order must be created given a card, and placed in PaymentBridge
      *
