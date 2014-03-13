@@ -1,10 +1,10 @@
 Developing Platform
 ===================
 
-| Since any payment platform is implemented on the existing Payment
-Suite for Symfony2 is something like a plugin, must be implemented simply those
-specific features of the platform itself.
-| The core provides a number of tools, both definition and execution, so
+Since any payment platform is implemented on the existing PaymentSuite for Symfony2 is something like a plugin,
+must be implemented simply those specific features of the platform itself.
+
+The core provides a number of tools, both definition and execution, so
 it is not too complex to implement each of the platforms, and providing
 homogeneity in the set of all events regarding concerns.
 
@@ -37,13 +37,15 @@ just implement a single method.
         public function getPaymentName();
     }
 
-| At the time that our platform offers data on the response of the
-payment, it is interesting that this class implements their getters,
-although not common on all platforms. This is done because there may be
-a case where a project wants to subscribe to an event of Core, acting
-only if the payment is one in specific. In this case, you will have
+At the time that our platform offers data on the response of the payment,
+it is interesting that this class implements their getters,
+although not common on all platforms. 
+
+This is done because there may be a case where a project wants to subscribe to an event of Core, 
+acting only if the payment is one in specific. In this case, you will have
 access to the data offered without any problem.
-| Here is an example of what could be a kind of a new payment method
+
+Here is an example of what could be a kind of a new payment method
 called AcmePaymentBundle
 
 .. code-block:: php
@@ -340,7 +342,7 @@ parameter configuration, in order to inject.
     /**
      * This is the class that loads and manages your bundle configuration
      */
-    class DineromailExtension extends Extension
+    class AcmePaymentExtension extends Extension
     {
         /**
          * {@inheritDoc}
