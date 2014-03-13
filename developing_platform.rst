@@ -16,7 +16,7 @@ PaymentMethod. This must extend an interface located in
 ``Mmoreram\PaymentCoreBundle\PaymentMethodInterface``, so you should
 just implement a single method.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -46,7 +46,7 @@ access to the data offered without any problem.
 | Here is an example of what could be a kind of a new payment method
 called AcmePaymentBundle
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -126,7 +126,7 @@ data is used for completely static definition.
 This configuration must be properly defined and validated, as defined
 `here`_. Let’s see a configuration sample
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
 
@@ -153,7 +153,7 @@ short example of what could be a configuration validator.
 
 .. _here: http://symfony.com/doc/current/components/config/definition.html
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -226,7 +226,7 @@ short example of what could be a configuration validator.
 And an example of parametrization of configuration items. Each platform
 must implement their own items.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -285,7 +285,7 @@ be able to define each of the paths associated with each of the actions
 of the drivers. For this, each platform must make available to the user
 the possibility to overwrite the path as follows.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -326,7 +326,7 @@ Once we provide the possibility to define this variable, adding one by
 default (should follow this pattern), we transform the variable
 parameter configuration, in order to inject.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -362,7 +362,7 @@ inject an instance of
 class is responsible for providing direct methods to launch the kernel
 events. All methods require paymentBridge and paymentmethod.
 
-.. code:: php
+.. code-block:: php
 
     /**
      * At this point, order must be created given a card, and placed in PaymentBridge
@@ -421,7 +421,7 @@ Order load
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         my_event_listener:
@@ -440,7 +440,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         my_event_listener:
@@ -458,7 +458,7 @@ Order done
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         my_event_listener:
@@ -477,7 +477,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         my_event_listener:
@@ -496,7 +496,7 @@ methods.
 | ``$event->getPaymentMethod`` returns the implementation of
 ``PaymentMethodInterface`` implemented by Method Platform.
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         my_event_listener:

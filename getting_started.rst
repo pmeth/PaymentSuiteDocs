@@ -9,7 +9,7 @@ You have to add require line into you composer.json file
     you need to replace ``platform`` with bundle name you want to
     install
 
-.. code:: yaml
+.. code-block:: yaml
 
     "require": {
        // ...
@@ -18,14 +18,14 @@ You have to add require line into you composer.json file
 
 Then you have to use composer to update your project dependencies
 
-.. code:: bash
+.. code-block:: bash
 
     $ curl -sS https://getcomposer.org/installer | php
     $ php composer.phar update
 
 And register the bundle in your ``appkernel.php`` file
 
-.. code:: php
+.. code-block:: php
 
     return array(
        // ...

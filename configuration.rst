@@ -21,7 +21,7 @@ Payment Service is a `service`_ that has to be necessarily implemented.
 This service **must** implement
 ``Mmoreram\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface``.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -124,7 +124,7 @@ This service **must** implement
 This service **must** be named ``payment.bridge`` and configured in the
 ``Resources\config\services.yml`` file:
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         # ...
@@ -142,7 +142,7 @@ events.
 In fact, this will be the way to manage your cart and your order in
 every payment stage.
 
-.. code:: php
+.. code-block:: php
 
     <?php
 
@@ -225,7 +225,7 @@ every payment stage.
 Register these event listeners in your ``Resources\config\services.yml``
 file:
 
-.. code:: yaml
+.. code-block:: yaml
 
     services:
         # ...
