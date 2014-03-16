@@ -115,10 +115,10 @@ called AcmePaymentBundle
 Configuration
 -------------
 
-| Consider the data coming through PaymentBridge service defined by the
+Consider the data coming through PaymentBridge service defined by the
 project, and you should not redefine them statically. The configuration
 data is used for completely static definition.
-| A clear example of configuration is
+A clear example of configuration is
 
 -  Public and private keys
 -  API url
