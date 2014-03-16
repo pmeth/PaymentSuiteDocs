@@ -75,7 +75,7 @@ payment form.
 
 PaymillBundle gives you all form view as requested by the payment module.
 
-.. code-block:: jinja
+.. code-block:: twig
     {% block content %}
             <div class="payment-wrapper">
                 {{ paymill_render() }}
