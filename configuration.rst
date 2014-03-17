@@ -39,7 +39,7 @@ This service **must** implement
         private $order;
 
         /**
-         * Set order to OrderWrapper
+         * Set order to PaymentBridge
          *
          * @var Object $order Order element
          */
