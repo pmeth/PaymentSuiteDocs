@@ -18,7 +18,7 @@ You have to add require line into you composer.json file
 
     "require": {
        // ...
-       "paymentsuite/google-wallet-bundle": "1.0.1"
+       "paymentsuite/google-wallet-bundle": "1.1"
     }
 
 Then you have to use composer to update your project dependencies
@@ -26,7 +26,7 @@ Then you have to use composer to update your project dependencies
 .. code-block:: bash
 
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar update
+    $ php composer.phar update paymentsuite/google-wallet-bundle
 
 And register the bundle in your ``AppKernel.php`` file
 
@@ -75,6 +75,8 @@ Configure the GoogleWalletBundle parameters in your ``config.yml``.
             cart_append: false
             cart_append_field: cart_id
 
+To get ``merchant_id`` and ``secret_key`` you have to register for `Sandbox Settings <https://sandbox.google.com/checkout/inapp/merchant/settings.html>`_ or `Production Settings <https://checkout.google.com/inapp/merchant/settings.html>`_. Also there you have to set postback URL (must be on public DNS and not localhost). For more information you can visit page of `Google Wallet APIs <https://developers.google.com/wallet/>`_.
+
 Extra Data
 ~~~~~~~~~~
 
@@ -86,7 +88,7 @@ PaymentBridge Service must return, at least, these fields.
 Router
 ~~~~~~
 
-GoogleWalletBundle allows developer to specify the route of controller where google wallet callback is processed.
+GoogleWalletBundle allows developer to specify the route of controller where Google Wallet callback is processed.
 By default, this value is ``/payment/googlewallet/callback`` but this value can be changed in configuration file.
 Anyway GoogleWalletBundle's routes must be parsed by the framework, so these lines must be included into ``routing.yml`` file.
 
@@ -219,3 +221,127 @@ As every project need its own form design, you should overwrite in
 ``app/Resources/PaymillBundle/views/Paymill/view.html.twig``, paymill form render
 template placed in
 ``PaymentSuite/Paymill/Bundle/Resources/views/Paymill/view.html.twig``.
+
+
+StripeBundle
+-------------
+This bundle bring you a possibility to make simple payments through `Stripe <https://stripe.com>`_.
+
+Install
+~~~~~~~~~~~~~
+
+You have to add require line into you composer.json file
+
+.. code-block:: yaml
+
+    "require": {
+       // ...
+       "paymentsuite/stripe-bundle": "1.1"
+    }
+
+Then you have to use composer to update your project dependencies
+
+.. code-block:: bash
+
+    $ curl -sS https://getcomposer.org/installer | php
+    $ php composer.phar update paymentsuite/stripe-bundle
+
+And register the bundle in your ``AppKernel.php`` file
+
+.. code-block:: php
+
+    return array(
+       // ...
+       new PaymentSuite\PaymentCoreBundle\PaymentCoreBundle(),
+       new PaymentSuite\StripeBundle\StripeBundle(),
+    );
+
+Configuration
+~~~~~~~~~~~~~
+
+If it's first payment method of PaymentSuite in your project, first you have to configure PaymentBridge Service and Payment Event Listener following `this documentation <http://docs.paymentsuite.org/en/latest/configuration.html/>`_.
+
+Configure the StripeBundle parameters in your ``config.yml``.
+
+.. code-block:: yaml
+
+    stripe:
+
+        # stripe keys
+        public_key: XXXXXXXXXXXX
+        private_key: XXXXXXXXXXXX
+
+        # By default, controller route is /payment/stripe/execute
+        controller_route: /my/custom/route
+
+        # Configuration for payment success redirection
+        #
+        # Route defines which route will redirect if payment success
+        # If order_append is true, Bundle will append cart identifier into route
+        #    taking order_append_field value as parameter name and
+        #    PaymentOrderWrapper->getOrderId() value
+        payment_success:
+            route: cart_thanks
+            order_append: true
+            order_append_field: order_id
+
+        # Configuration for payment fail redirection
+        #
+        # Route defines which route will redirect if payment fails
+        # If cart_append is true, Bundle will append cart identifier into route
+        #    taking cart_append_field value as parameter name and
+        #    PaymentCartWrapper->getCartId() value
+        payment_fail:
+            route: cart_view
+            cart_append: false
+            cart_append_field: cart_id
+
+About Stripe ``public_key`` and ``private_key`` you can learn more in `Stripe documentation page <https://stripe.com/docs/tutorials/dashboard#api-keys>`_.
+
+Router
+~~~~~~
+
+StripeBundle allows developer to specify the route of controller where Stripe callback is processed.
+By default, this value is ``/payment/stripe/callback`` but this value can be changed in configuration file.
+Anyway StripeBundle's routes must be parsed by the framework, so these lines must be included into ``routing.yml`` file.
+
+.. code-block:: yaml
+
+    stripe_payment_routes:
+        resource: .
+        type: stripe
+
+Display
+~~~~~~~
+
+Once your StripeBundle is installed and well configured, you need to place your payment form.
+
+StripeBundle gives you all code as requested by the payment module.
+
+.. code-block:: twig
+
+    {% block content %}
+        <div class="payment-wrapper">
+            {{ stripe_render() }}
+        </div>
+    {% endblock content %}
+
+    {% block foot_script %}
+        {{ parent() }}
+        {{ stripe_scripts() }}
+    {% endblock foot_script %}
+
+Customize
+~~~~~~~~~
+
+`stripe_render()` just print a basic form.
+
+As every project need its own form design, you can overwrite default form located in: ``app/Resources/StripeBundle/views/Stripe/view.html.twig`` following `Stripe documentation <https://stripe.com/docs/tutorials/forms>`_.
+
+In another hand, Stripe `recommend  <https://stripe.com/docs/tutorials/forms#create-a-single-use-token>`_ use `jQuery form validator <https://github.com/stripe/jquery.payment>`_.
+
+Testing and more documentation
+~~~~~~~~~
+
+For testing you can use `these examples <https://stripe.com/docs/testing>`_.
+More detail about Stripe API you can find in this `web <https://stripe.com/docs/api/php>`_.
