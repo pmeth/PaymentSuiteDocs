@@ -19,7 +19,7 @@ PaymentBridge Service
 
 Payment Service is a `service`_ that has to be necessarily implemented.
 This service **must** implement
-``Mmoreram\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface``.
+``PaymentSuite\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface``.
 
 .. code-block:: php
 
@@ -27,7 +27,7 @@ This service **must** implement
 
     namespace YourProjectName\PaymentCoreBundle\Services;
 
-    use Mmoreram\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface;
+    use PaymentSuite\PaymentCoreBundle\Services\Interfaces\PaymentBridgeInterface;
 
     class PaymentBridge implements PaymentBridgeInterface
     {
@@ -148,11 +148,11 @@ every payment stage.
 
     namespace YourProjectName\PaymentBridgeBundle\EventListener;
 
-    use Mmoreram\PaymentCoreBundle\Event\PaymentOrderLoadEvent;
-    use Mmoreram\PaymentCoreBundle\Event\PaymentOrderCreatedEvent;
-    use Mmoreram\PaymentCoreBundle\Event\PaymentOrderDoneEvent;
-    use Mmoreram\PaymentCoreBundle\Event\PaymentOrderSuccessEvent;
-    use Mmoreram\PaymentCoreBundle\Event\PaymentOrderFailEvent;
+    use PaymentSuite\PaymentCoreBundle\Event\PaymentOrderLoadEvent;
+    use PaymentSuite\PaymentCoreBundle\Event\PaymentOrderCreatedEvent;
+    use PaymentSuite\PaymentCoreBundle\Event\PaymentOrderDoneEvent;
+    use PaymentSuite\PaymentCoreBundle\Event\PaymentOrderSuccessEvent;
+    use PaymentSuite\PaymentCoreBundle\Event\PaymentOrderFailEvent;
 
     /**
      * Payment event listener
