@@ -18,7 +18,7 @@ You have to add require line into you composer.json file
 
     "require": {
        // ...
-       "paymentsuite/authorizenet-bundle": "1.1"
+       "paymentsuite/authorizenet-bundle": "v1.1"
     }
 
 Then you have to use composer to update your project dependencies
@@ -136,7 +136,7 @@ You have to add require line into you composer.json file
 
     "require": {
        // ...
-       "paymentsuite/google-wallet-bundle": "1.1"
+       "paymentsuite/google-wallet-bundle": "v1.1"
     }
 
 Then you have to use composer to update your project dependencies
@@ -354,7 +354,7 @@ You have to add require line into you composer.json file
 
     "require": {
        // ...
-       "paymentsuite/stripe-bundle": "1.1"
+       "paymentsuite/stripe-bundle": "v1.1"
     }
 
 Then you have to use composer to update your project dependencies
