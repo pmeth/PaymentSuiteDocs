@@ -111,13 +111,23 @@ This service **must** implement
         }
 
         /**
+         * Return if order has already been paid
+         *
+         * @return boolean
+         */
+        public function isOrderPaid()
+        {
+            return array();
+        }
+
+        /**
          * Get extra data
          *
          * @return array
          */
         public function getExtraData()
         {
-            return array();
+            return false;
         }
     }
 
