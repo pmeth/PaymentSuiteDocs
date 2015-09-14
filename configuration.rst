@@ -200,7 +200,7 @@ every payment stage.
          *
          * @param PaymentOrderDoneEvent $paymentOrderDoneEvent Payment Order Done event
          */
-        public function onPaymentDone(PaymentOrderDoneEvent $paymentOrderDoneEvent)
+        public function onPaymentOrderDone(PaymentOrderDoneEvent $paymentOrderDoneEvent)
         {
             /*
              * Your code for this event
@@ -212,7 +212,7 @@ every payment stage.
          *
          * @param PaymentOrderSuccessEvent $paymentOrderSuccessEvent Payment Order Success event
          */
-        public function onPaymentSuccess(PaymentOrderSuccessEvent $paymentOrderSuccessEvent)
+        public function onPaymentOrderSuccess(PaymentOrderSuccessEvent $paymentOrderSuccessEvent)
         {
             /*
              * Your code for this event
@@ -224,7 +224,7 @@ every payment stage.
          *
          * @param PaymentOrderFailEvent $paymentOrderFailEvent Payment Order Fail event
          */
-        public function onPaymentFail(PaymentOrderFailEvent $paymentOrderFailEvent)
+        public function onPaymentOrderFail(PaymentOrderFailEvent $paymentOrderFailEvent)
         {
             /*
              * Your code for this event
@@ -245,9 +245,9 @@ file:
             tags:
                 - { name: kernel.event_listener, event: payment.order.done, method: onPaymentOrderDone }
                 - { name: kernel.event_listener, event: payment.order.created, method: onPaymentOrderCreated }
-                - { name: kernel.event_listener, event: payment.order.load, method: onPaymentLoad }
-                - { name: kernel.event_listener, event: payment.order.success, method: onPaymentSuccess }
-                - { name: kernel.event_listener, event: payment.order.fail, method: onPaymentFail }
+                - { name: kernel.event_listener, event: payment.order.load, method: onPaymentOrderLoad }
+                - { name: kernel.event_listener, event: payment.order.success, method: onPaymentOrderSuccess }
+                - { name: kernel.event_listener, event: payment.order.fail, method: onPaymentOrderFail }
 
 .. _create an Event Listener: http://symfony.com/doc/current/cookbook/service_container/event_listener.html
 
